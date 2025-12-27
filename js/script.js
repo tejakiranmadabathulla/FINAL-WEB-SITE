@@ -310,27 +310,72 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================
     // MUSIC CONTROL LOGIC
     // =========================================
+    // =========================================
+    // MUSIC CONTROL LOGIC (PERSISTENT)
+    // =========================================
     const music = document.getElementById('bg-music');
     const musicToggle = document.getElementById('music-toggle');
-    let isPlaying = false;
 
     if (music && musicToggle) {
-        // Set initial volume
         music.volume = 0.5;
 
-        musicToggle.addEventListener('click', () => {
-            if (isPlaying) {
-                music.pause();
-                musicToggle.classList.remove('playing');
-                musicToggle.innerHTML = '<i class="fa-solid fa-music"></i>';
-            } else {
-                music.play().catch(e => console.log("Audio play prevented by browser. User interaction required."));
+        // Check LocalStorage for persistence
+        const savedTime = localStorage.getItem('bgMusicTime');
+        const isMusicPlaying = localStorage.getItem('bgMusicPlaying') === 'true';
+
+        if (savedTime) {
+            music.currentTime = parseFloat(savedTime);
+        }
+
+        const updateIcon = (playing) => {
+            if (playing) {
                 musicToggle.classList.add('playing');
                 musicToggle.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+            } else {
+                musicToggle.classList.remove('playing');
+                musicToggle.innerHTML = '<i class="fa-solid fa-music"></i>';
             }
-            isPlaying = !isPlaying;
+        };
+
+        // Attempt autoplay if it was playing previously
+        if (isMusicPlaying) {
+            const playPromise = music.play();
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    updateIcon(true);
+                }).catch(error => {
+                    console.log("Autoplay prevented by browser policy");
+                    updateIcon(false);
+                    // We don't reset the flag here immediately so users know it WAS playing
+                    // but practically we need interaction.
+                });
+            }
+        } else {
+            updateIcon(false);
+        }
+
+        musicToggle.addEventListener('click', () => {
+            if (music.paused) {
+                music.play().then(() => {
+                    localStorage.setItem('bgMusicPlaying', 'true');
+                    updateIcon(true);
+                }).catch(e => console.error("Play failed:", e));
+            } else {
+                music.pause();
+                localStorage.setItem('bgMusicPlaying', 'false');
+                updateIcon(false);
+            }
         });
 
-        // Try to autoplay logic can be added here
+        // Save time periodically
+        setInterval(() => {
+            if (!music.paused) {
+                localStorage.setItem('bgMusicTime', music.currentTime);
+            }
+        }, 1000);
+
+        // Save play state separately on pause/play events to be safe
+        music.addEventListener('play', () => localStorage.setItem('bgMusicPlaying', 'true'));
+        music.addEventListener('pause', () => localStorage.setItem('bgMusicPlaying', 'false'));
     }
 });
