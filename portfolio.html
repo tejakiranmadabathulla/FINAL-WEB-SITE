@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work | TRUE KAIZEN STUDIOS</title>
+    <meta name="description" content="Our portfolio of cinematic wedding films, commercials, and event edits.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/LOGO.png" alt="TK Logo">
+                <span class="text-gradient" style="font-weight: 900; font-size: 1.5rem;">TRUE KAIZEN</span>
+            </a>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-link active">Work</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="https://wa.me/918985614357" target="_blank" class="btn btn-primary">Book Edit</a>
+                <div class="mobile-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section-padding bg-darker" style="padding-top: 150px; min-height: 100vh;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">OUR WORK</span>
+                <h2 class="section-title">All Featured Projects</h2>
+                <p class="section-desc">Explore our complete collection of cinematic edits.</p>
+            </div>
+
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="wedding">Weddings</button>
+                <button class="filter-btn" data-filter="commercial">Commercials</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="shortfilm">Short Films</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Item 1 -->
+                <div class="portfolio-item" data-category="wedding">
+                    <div class="portfolio-thumb">
+                        <video muted loop preload="metadata" class="thumb-video">
+                            <source src="assets/web video.mp4" type="video/mp4">
+                        </video>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h4>Royal Wedding</h4>
+                                <span>Wedding Highlight</span>
+                            </div>
+                            <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="portfolio-item" data-category="commercial">
+                    <div class="portfolio-thumb">
+                        <video muted loop preload="metadata" class="thumb-video">
+                            <source src="assets/web video.mp4" type="video/mp4">
+                        </video>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h4>Nike Spec Ad</h4>
+                                <span>Commercial</span>
+                            </div>
+                            <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="portfolio-item" data-category="events">
+                    <div class="portfolio-thumb">
+                        <video muted loop preload="metadata" class="thumb-video">
+                            <source src="assets/web video.mp4" type="video/mp4">
+                        </video>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h4>Housewarming 2024</h4>
+                                <span>Event Edit</span>
+                            </div>
+                            <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="portfolio-item" data-category="wedding">
+                    <div class="portfolio-thumb">
+                        <video muted loop preload="metadata" class="thumb-video">
+                            <source src="assets/web video.mp4" type="video/mp4">
+                        </video>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h4>Destination Love</h4>
+                                <span>Pre-Wedding</span>
+                            </div>
+                            <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="portfolio-item" data-category="shortfilm">
+                    <div class="portfolio-thumb">
+                        <video muted loop preload="metadata" class="thumb-video">
+                            <source src="assets/web video.mp4" type="video/mp4">
+                        </video>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h4>The Last Train</h4>
+                                <span>Short Film</span>
+                            </div>
+                            <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="portfolio-item" data-category="events">
+                    <div class="portfolio-thumb">
+                        <video muted loop preload="metadata" class="thumb-video">
+                            <source src="assets/web video.mp4" type="video/mp4">
+                        </video>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h4>Half-Saree Ceremony</h4>
+                                <span>Traditional Event</span>
+                            </div>
+                            <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="assets/LOGO.png" alt="TK Logo">
+                <h3>TRUE KAIZEN STUDIOS</h3>
+            </div>
+            <div class="copyright">
+                &copy; 2025 True Kaizen Studios. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/918985614357" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="close-lightbox">&times;</span>
+            <video id="lightbox-video" controls>
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

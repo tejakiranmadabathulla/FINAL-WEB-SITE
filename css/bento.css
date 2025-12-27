@@ -1,0 +1,72 @@
+/* =========================================
+   MODERN BENTO GRID LAYOUT (SERVICES)
+   ========================================= */
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: auto auto;
+    /* Allow rows to adjust to content */
+    gap: 1.5rem;
+}
+
+/* Feature Item - Spans 2 rows on large screens */
+.bento-item-large {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+}
+
+/* Standard Items */
+.bento-item {
+    grid-column: 2;
+    /* grid-row is auto */
+}
+
+/* Responsive: Stack on mobile/tablet */
+@media (max-width: 968px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .bento-item-large {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .bento-item {
+        grid-column: 1;
+        /* auto flow */
+    }
+}
+
+/* Enhancements for Bento cards */
+.bento-card {
+    padding: 2.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+}
+
+.bento-card:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+/* Action button inside bento */
+.bento-action {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    color: #FFD700;
+    font-size: 0.9rem;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: gap 0.2s ease;
+}
+
+.bento-card:hover .bento-action {
+    gap: 0.8rem;
+}
